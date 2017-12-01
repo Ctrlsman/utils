@@ -3,6 +3,7 @@
 
 
 from wsgiref.simple_server import make_server
+from jinja2 import Template
 
 URL_PATTERNS = (
     ('hi/', 'say_hi'),
@@ -30,7 +31,11 @@ class Dispatcher(object):
 
 def say_hi(environ, start_response):
     start_response("200 OK", [('Content-type', 'text/html')])
-    return ["kenshin say hi to you!"]
+    f = open('hi.html', 'r')
+    result = f.read()
+    template = Template(result)
+    data = template.render(name='Test', user_list=['user1', 'user2'])
+    return data.encode('utf-8')
 
 
 def say_hello(environ, start_response):
