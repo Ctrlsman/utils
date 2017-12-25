@@ -11,5 +11,6 @@ def do_request():
     )
     return response
 
+
 loop = asyncio.get_event_loop()
 loop.run_until_complete(do_request())
