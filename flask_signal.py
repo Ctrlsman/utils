@@ -10,7 +10,7 @@ app = Flask(__name__)
 class Config:
     HTTP_HOST = '0.0.0.0'
     HTTP_PORT = 9965
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:zds819918@localhost/test?charset=utf8mb4'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://username:password@localhost/test?charset=utf8mb4'
     DEBUG = 1
     SECRET_KEY = '!@#456&*&('
 
